@@ -3,6 +3,7 @@ import type { AppProps } from 'next/app'
 import { Inter, Montserrat } from 'next/font/google'
 import { Fragment, ReactNode } from 'react'
 import { Meta, MetaProps } from '@layout/meta'
+import { Cursor } from '@layout/cursor'
 
 import '@style/global.css'
 import '@style/flowing.css'
@@ -37,6 +38,7 @@ export default function App({ Component, pageProps }: AppPropsWithLayout) {
       <Layout>
         <Meta {...metaProps} />
         <Component {...pageProps} />
+        <Cursor />
       </Layout>
     </main>
   )
