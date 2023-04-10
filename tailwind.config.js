@@ -1,20 +1,23 @@
-const theme = require('tailwindcss/defaultTheme')
+const { fontFamily } = require('tailwindcss/defaultTheme')
 
 module.exports = {
   mode: 'jit',
   darkMode: 'class',
   content: [
-    './pages/**/*.{js,ts,jsx,tsx,md,mdx}',
-    './components/**/*.{js,ts,jsx,tsx,md,mdx}',
-    './static/**/*.{js,ts,jsx,tsx,md,mdx}',
-    './public/**/*.{js,ts,jsx,tsx,md,mdx}',
-    './libs/**/*.{js,ts,jsx,tsx,md,mdx}',
-    './utils/**/*.{ts,js}',
-    './theme.config.js',
+    './src/pages/**/*.{js,ts,jsx,tsx}',
+    './src/components/**/*.{js,ts,jsx,tsx}',
+    './src/static/**/*.{js,ts,jsx,tsx}',
+    './src/public/**/*.{js,ts,jsx,tsx}',
+    './src/libs/**/*.{js,ts,jsx,tsx}',
+    './src/utils/**/*.{ts,js}',
   ],
   plugins: [require('@tailwindcss/line-clamp')],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['var(--font-inter)', ...fontFamily.sans],
+        mono: ['var(--font-montserrat)', ...fontFamily.mono],
+      },
       colors: {
         'dark-100': '#171717',
         'dark-200': '#151515',

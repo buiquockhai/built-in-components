@@ -1,11 +1,8 @@
+@tailwind base;
 @tailwind utilities;
 
 .prevent-select {
   -webkit-user-select: none;
   -ms-user-select: none;
   user-select: none;
-}
-
-.min-h-fit {
-  min-height: calc(100vh - 4rem);
 }

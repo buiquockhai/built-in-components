@@ -11,8 +11,3 @@
     transform: translateX(var(--shift-distance-to));
   }
 }
-
-/* .slider-track {
-  display: flex;
-  animation-fill-mode: forwards;
-} */
