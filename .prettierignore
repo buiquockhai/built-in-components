@@ -1,6 +1,9 @@
 **/.git
 **/.svn
 **/.hg
+.*
+.husky
+public
 node_modules
 next
 build
