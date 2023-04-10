@@ -1,0 +1,93 @@
+{
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 8,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "impliedStrict": true,
+      "experimentalObjectRestSpread": true
+    },
+    "allowImportExportEverywhere": true
+  },
+  "plugins": ["@typescript-eslint", "import", "compat"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:@next/next/recommended",
+    "plugin:compat/recommended",
+    "plugin:eslint-comments/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:import/recommended",
+    "plugin:import/typescript",
+    "plugin:react-hooks/recommended",
+    "plugin:prettier/recommended",
+    "prettier"
+  ],
+  "rules": {
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/no-non-null-assertion": "off",
+    "@typescript-eslint/no-unused-vars": "off",
+    "@typescript-eslint/no-var-requires": "off",
+    "import/namespace": "off",
+    "import/no-unresolved": "off",
+    "react-hooks/rules-of-hooks": "off",
+    "compat/compat": "off",
+    "@next/next/no-img-element": "off",
+    "sort-imports": [
+      "warn",
+      {
+        "ignoreCase": false,
+        "ignoreDeclarationSort": true,
+        "ignoreMemberSort": false
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": ["*.mdx", "*.md"],
+      "parser": "eslint-mdx",
+      "extends": ["plugin:mdx/recommended"],
+      "rules": {
+        "import/no-anonymous-default-export": "off",
+        "react/display-name": "off",
+        "react/jsx-no-undef": "off",
+        "no-undef": "off",
+        "import/exports": "off"
+      },
+      "settings": {
+        "mdx/code-blocks": true
+      }
+    }
+  ],
+  "ignorePatterns": [
+    "CHANGELOG.md",
+    "build",
+    "dist",
+    "node_modules",
+    "typechain",
+    "coverage",
+    "generated.ts",
+    "output.json",
+    "results.json"
+  ],
+  "settings": {
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts", ".tsx", ".d.ts"]
+    },
+    "import/resolver": {
+      "typescript": {
+        "alwaysTryTypes": true
+      }
+    },
+    "react": {
+      "version": "detect"
+    },
+    "polyfills": ["Promise", "URL"]
+  },
+  "env": {
+    "es6": true,
+    "browser": true,
+    "node": true
+  }
+}

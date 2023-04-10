@@ -1,0 +1,10 @@
+**/.git
+**/.svn
+**/.hg
+node_modules
+next
+build
+coverage
+package-lock.json
+yarn.lock
+package.json

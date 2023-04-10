@@ -1,0 +1,18 @@
+.collapse-ui {
+  display: block;
+}
+
+.collapse-ui:not(.collapse-show) {
+  display: none;
+}
+
+.collapse-show {
+  display: block;
+}
+
+.collapsing {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  transition: height 0.5s ease;
+}

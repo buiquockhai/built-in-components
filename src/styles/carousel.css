@@ -1,0 +1,18 @@
+:root {
+  --shift-distance-from: 0;
+  --shift-distance-to: 0;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(var(--shift-distance-from));
+  }
+  100% {
+    transform: translateX(var(--shift-distance-to));
+  }
+}
+
+/* .slider-track {
+  display: flex;
+  animation-fill-mode: forwards;
+} */

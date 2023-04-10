@@ -1,0 +1,22 @@
+:root {
+  --flowing-transform: 0;
+}
+
+@keyframes flowing {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(var(--flowing-transform));
+  }
+}
+
+.flowing-track {
+  display: flex;
+  animation: flowing 30s linear infinite;
+  animation-fill-mode: forwards;
+}
+
+.flowing:hover .flowing-track {
+  animation-play-state: paused;
+}
