@@ -5,6 +5,12 @@ html {
   cursor: var(--cursor-url) 4 4, auto;
 }
 
+html,
+body {
+  line-height: 1.5em;
+  @apply text-slate-900;
+}
+
 .prevent-select {
   -webkit-user-select: none;
   -ms-user-select: none;
@@ -39,6 +45,10 @@ html {
   background-color: rgba(0, 0, 0, 0.4);
 }
 
+.c-opening-bg {
+  animation: opening-bg-fade 3500ms ease-in;
+}
+
 .c-opening-cloud {
   position: absolute;
   inset: 0;
@@ -55,7 +65,7 @@ html {
   background-repeat: repeat;
   background-position: 0 0;
   background-size: auto 100%;
-  animation: cloud-moving 500s linear infinite;
+  animation: opening-cloud-moving 300s linear infinite;
 }
 
 .c-opening-cloud::before {
@@ -65,4 +75,10 @@ html {
 .c-opening-cloud::after {
   background-image: var(--opening-cloud-after-url);
   animation-delay: 500ms;
+}
+
+.c-opening-text {
+  clip-path: inset(0 0 0 100%);
+  animation: opening-text-fade 2000ms ease-in;
+  animation-delay: 1000ms;
 }

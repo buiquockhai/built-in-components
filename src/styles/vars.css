@@ -25,11 +25,41 @@
   }
 }
 
-@keyframes cloud-moving {
+@keyframes opening-cloud-moving {
   0% {
     background-position: 0 0;
   }
   100% {
     background-position: -10000px 0;
+  }
+}
+
+@keyframes opening-text-fade {
+  0% {
+    clip-path: inset(0 100% 0 0);
+  }
+  20% {
+    clip-path: inset(0 0 0 0);
+  }
+  75% {
+    clip-path: inset(0 0 0 0);
+  }
+  100% {
+    clip-path: inset(0 0 0 100%);
+  }
+}
+
+@keyframes opening-bg-fade {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }
