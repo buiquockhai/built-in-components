@@ -1,0 +1,35 @@
+:root {
+  --carousel-distance-from: 0;
+  --carousel-distance-to: 0;
+  --flowing-transform: 0;
+  --cursor-url: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='8' width='8'%3E%3Ccircle cx='4' cy='4' r='4' fill='rgb(0,0,0,0.4)'/%3E%3C/svg%3E%0A");
+  --opening-cloud-before-url: url('/images/cloud_a.webp');
+  --opening-cloud-after-url: url('/images/cloud_b.webp');
+}
+
+@keyframes carousel {
+  0% {
+    transform: translateX(var(--carousel-distance-from));
+  }
+  100% {
+    transform: translateX(var(--carousel-distance-to));
+  }
+}
+
+@keyframes flowing {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(var(--flowing-transform));
+  }
+}
+
+@keyframes cloud-moving {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -10000px 0;
+  }
+}

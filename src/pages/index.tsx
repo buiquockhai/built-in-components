@@ -1,12 +1,10 @@
+import { Opening } from '@component/opening'
 import { MetaProps } from '@layout/meta'
-import Image from 'next/image'
 
 export default function IndexPage() {
   return (
-    <div className='w-full h-screen relative'>
-      <Image src='/images/begin.webp' alt='begin-image' fill />
-      <Image src='/images/cloud_a.webp' alt='begin-image' fill />
-      <Image src='/images/cloud_b.webp' alt='begin-image' fill />
+    <div className='relative'>
+      <Opening />
     </div>
   )
 }

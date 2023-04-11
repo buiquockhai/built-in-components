@@ -5,9 +5,9 @@ import { Fragment, ReactNode } from 'react'
 import { Meta, MetaProps } from '@layout/meta'
 import { Cursor } from '@layout/cursor'
 
+import '@style/vars.css'
 import '@style/global.css'
 import '@style/flowing.css'
-import '@style/carousel.css'
 import '@style/collapse.css'
 
 const inter = Inter({
