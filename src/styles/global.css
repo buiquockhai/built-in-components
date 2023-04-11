@@ -36,11 +36,11 @@ body {
   pointer-events: none;
   backdrop-filter: blur(2px);
   background-color: rgba(0, 0, 0, 0.1);
+  transition: transform 200ms ease-in;
 }
 
 .cursor-inner-active {
-  width: 50%;
-  height: 50%;
+  transform: translate3d(-50%, -50%, 0) scale(0.5);
   backdrop-filter: blur(0px);
   background-color: rgba(0, 0, 0, 0.4);
 }

@@ -18,12 +18,30 @@ export function Cursor() {
       positionRef.current.mouseY = event.y
     }
 
+    const mouseOver = () => {
+      cursor.current?.firstElementChild?.classList.add('cursor-inner-active')
+    }
+
+    const mouseOut = () => {
+      cursor.current?.firstElementChild?.classList.remove('cursor-inner-active')
+    }
+
+    const links = document.querySelectorAll('a')
+
     if (cursor.current && typeof window !== 'undefined') {
       document.addEventListener('mousemove', mouseMove)
+      Array.from(links).forEach((element) => {
+        element.addEventListener('mouseover', mouseOver)
+        element.addEventListener('mouseout', mouseOut)
+      })
     }
 
     return () => {
       document.removeEventListener('mousemove', mouseMove)
+      Array.from(links).forEach((element) => {
+        element.removeEventListener('mouseover', mouseOver)
+        element.removeEventListener('mouseout', mouseOut)
+      })
     }
   }, [cursor])
 
