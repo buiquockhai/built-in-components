@@ -34,6 +34,7 @@
     "react-hooks/rules-of-hooks": "off",
     "compat/compat": "off",
     "@next/next/no-img-element": "off",
+    "@typescript-eslint/no-empty-function": "off",
     "sort-imports": [
       "warn",
       {
@@ -43,23 +44,6 @@
       }
     ]
   },
-  "overrides": [
-    {
-      "files": ["*.mdx", "*.md"],
-      "parser": "eslint-mdx",
-      "extends": ["plugin:mdx/recommended"],
-      "rules": {
-        "import/no-anonymous-default-export": "off",
-        "react/display-name": "off",
-        "react/jsx-no-undef": "off",
-        "no-undef": "off",
-        "import/exports": "off"
-      },
-      "settings": {
-        "mdx/code-blocks": true
-      }
-    }
-  ],
   "ignorePatterns": [
     "CHANGELOG.md",
     "build",

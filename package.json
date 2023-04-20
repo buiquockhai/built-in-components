@@ -12,6 +12,7 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "@react-spring/web": "^9.7.2",
     "@tailwindcss/line-clamp": "^0.4.2",
     "@types/react": "18.0.33",
     "@types/react-dom": "18.0.11",

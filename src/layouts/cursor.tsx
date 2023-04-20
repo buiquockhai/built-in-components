@@ -73,7 +73,9 @@ export function Cursor() {
         }
       }
       const cursorRef = cursor.current as HTMLDivElement
-      cursorRef.style.transform = `translate3d(${destinationX}px, ${destinationY}px, 0)`
+      if (cursorRef) {
+        cursorRef.style.transform = `translate3d(${destinationX}px, ${destinationY}px, 0)`
+      }
     }
     followMouse()
   }, [cursor])

@@ -1,0 +1,1 @@
+export { ClipBoardSvg } from './clipboard'

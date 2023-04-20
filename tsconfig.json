@@ -15,7 +15,8 @@
       "@style/*": ["styles/*"],
       "@static/*": ["static/*"],
       "@public/*": ["public/*"],
-      "@lib/*": ["libs/*"]
+      "@lib/*": ["libs/*"],
+      "@hook/*": ["hooks/*"]
     },
     "types": [],
     "resolveJsonModule": true,

@@ -23,6 +23,10 @@ module.exports = {
         'dark-200': '#151515',
         'dark-300': '#131313',
         'dark-400': '#111111',
+
+        primary: '#3C50E0',
+        secondary: '#80CAEE',
+        stroke: '#E2E8F0',
       },
       animationPlayState: {
         paused: 'paused',

@@ -1,13 +1,18 @@
 @tailwind base;
 @tailwind utilities;
 
-html {
+/* html {
   cursor: var(--cursor-url) 4 4, auto;
-}
+} */
 
 html,
 body {
-  line-height: 1.5em;
+  box-sizing: border-box;
+  overscroll-behavior: contain;
+  line-height: 1.5rem;
+  font-size: 14px;
+  font-weight: 400;
+  @apply fill-slate-900;
   @apply text-slate-900;
 }
 
