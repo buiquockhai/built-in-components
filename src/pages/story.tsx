@@ -1,6 +1,7 @@
 import { Input } from '@component/base/input'
 import { ClipBoardSvg, EyeSvg } from '@component/icons'
 import { Button } from '@component/base/button'
+import { Tooltip } from '@component/base/tooltip'
 
 export default function StoryPage() {
   return (
@@ -18,6 +19,10 @@ export default function StoryPage() {
         leftSection={<ClipBoardSvg />}
         rightSection={<ClipBoardSvg />}
       />
+      <Tooltip label='This is tooltip'>
+        <Button className='w-32'>Button</Button>
+      </Tooltip>
+      <div className='min-h-screen'></div>
     </form>
   )
 }

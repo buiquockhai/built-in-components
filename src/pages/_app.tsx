@@ -10,12 +10,12 @@ import '@style/global.css'
 import '@style/flowing.css'
 import '@style/collapse.css'
 
-const inter = Inter({
+export const inter = Inter({
   subsets: ['latin'],
   variable: '--font-inter',
 })
 
-const montserrat = Montserrat({
+export const montserrat = Montserrat({
   subsets: ['latin'],
   variable: '--font-montserrat',
 })
