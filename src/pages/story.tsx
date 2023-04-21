@@ -2,6 +2,24 @@ import { Input } from '@component/base/input'
 import { ClipBoardSvg, EyeSvg } from '@component/icons'
 import { Button } from '@component/base/button'
 import { Tooltip } from '@component/base/tooltip'
+import { Checkbox } from '@component/base/checkbox'
+import { Radio } from '@component/base/radio'
+import { RadioGroup } from '@component/base/radio-group'
+
+const radioGroups = [
+  {
+    id: 'male',
+    label: 'Male',
+  },
+  {
+    id: 'female',
+    label: 'Female',
+  },
+  {
+    id: 'other',
+    label: 'Other',
+  },
+]
 
 export default function StoryPage() {
   return (
@@ -20,8 +38,11 @@ export default function StoryPage() {
         rightSection={<ClipBoardSvg />}
       />
       <Tooltip label='This is tooltip'>
-        <Button className='w-32'>Button</Button>
+        <Button className='w-32'>Tooltip</Button>
       </Tooltip>
+      <Checkbox>Checkbox</Checkbox>
+      <Radio>Radio</Radio>
+      <RadioGroup title='Gender' options={radioGroups} required />
       <div className='min-h-screen'></div>
     </form>
   )
