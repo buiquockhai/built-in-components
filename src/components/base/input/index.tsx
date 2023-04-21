@@ -5,20 +5,20 @@ type Size = 'xs' | 'sm' | 'md' | 'lg' | 'xl'
 
 export interface Props extends Omit<ComponentPropsWithoutRef<'input'>, 'size'> {
   size?: Size
-  label?: ReactNode
+  label?: string
   leftSection?: ReactNode
   rightSection?: ReactNode
-  error?: ReactNode
-  description?: ReactNode
+  error?: string
+  description?: string
   prefix?: string
 }
 
 const sizes: Record<Size, string> = {
-  xs: 'h-8 px-2 text-sm',
-  sm: 'h-9 px-3',
-  md: 'h-10 px-3',
-  lg: 'h-12 px-3',
-  xl: 'h-14 px-4',
+  xs: 'h-[32px] px-2 min-w-[100px] text-sm gap-2',
+  sm: 'h-[36px] px-3 min-w-[100px] gap-2',
+  md: 'h-[40px] px-3 min-w-[100px] gap-2',
+  lg: 'h-[48px] px-3 min-w-[150px] text-md gap-3',
+  xl: 'h-[56px] px-4 min-w-[150px] text-lg gap-3',
 }
 
 export function Input({
@@ -45,7 +45,7 @@ export function Input({
       </span>
       <div
         className={classnames(
-          'peer rounded flex border items-center gap-2 focus-within:border-primary focus-within:ring-1',
+          'peer rounded flex border items-center focus-within:border-primary focus-within:ring-1',
           sizes[size],
           disabled,
           prefixed,
@@ -57,7 +57,10 @@ export function Input({
         {leftSection}
         <input
           id={id}
-          className={classnames('w-full outline-none transition', className)}
+          className={classnames(
+            'w-full outline-none transition peer',
+            className,
+          )}
           type='text'
           {...more}
         />

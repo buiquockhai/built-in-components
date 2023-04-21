@@ -3,14 +3,7 @@ const { fontFamily } = require('tailwindcss/defaultTheme')
 module.exports = {
   mode: 'jit',
   darkMode: 'class',
-  content: [
-    './src/pages/**/*.{js,ts,jsx,tsx}',
-    './src/components/**/*.{js,ts,jsx,tsx}',
-    './src/static/**/*.{js,ts,jsx,tsx}',
-    './src/public/**/*.{js,ts,jsx,tsx}',
-    './src/libs/**/*.{js,ts,jsx,tsx}',
-    './src/utils/**/*.{ts,js}',
-  ],
+  content: ['./src/**/*.{js,ts,jsx,tsx}'],
   plugins: [require('@tailwindcss/line-clamp')],
   theme: {
     extend: {
@@ -24,9 +17,10 @@ module.exports = {
         'dark-300': '#131313',
         'dark-400': '#111111',
 
-        primary: '#3C50E0',
+        primary: '#228BE6',
         secondary: '#80CAEE',
         stroke: '#E2E8F0',
+        light: '#E7F5FF',
       },
       animationPlayState: {
         paused: 'paused',
