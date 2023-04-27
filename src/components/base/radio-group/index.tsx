@@ -19,18 +19,18 @@ export function RadioGroup({
   required = false,
   ...more
 }: Props) {
-  const id = useId()
+  const htmlId = more.name ?? useId()
   const requireClass =
     required && `after:content-['*'] after:text-red-500 after:ml-1`
 
   return (
-    <fieldset id={id} {...more}>
+    <fieldset id={htmlId} {...more}>
       <legend className={classnames('empty:hidden mb-2', requireClass)}>
         {title}
       </legend>
       <div className='flex flex-col gap-2'>
         {options?.map((option) => (
-          <Radio key={option.id} name={id} disabled={more.disabled}>
+          <Radio key={option.id} name={htmlId} disabled={more.disabled}>
             {option.label}
           </Radio>
         ))}

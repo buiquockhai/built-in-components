@@ -32,14 +32,14 @@ export function Input({
   prefix,
   ...more
 }: Props) {
-  const id = useId()
+  const htmlId = more.id ?? useId()
 
   const required = more.required && `after:content-['_*'] after:text-red-500`
   const disabled = more.disabled && 'bg-gray-100 text-gray-500'
   const prefixed = prefix && 'pl-0'
 
   return (
-    <label htmlFor={id} className='flex flex-col w-full gap-1'>
+    <label htmlFor={htmlId} className='flex flex-col w-full gap-1'>
       <span className={classnames('empty:hidden select-none', required)}>
         {label}
       </span>
@@ -56,7 +56,7 @@ export function Input({
         </span>
         {leftSection}
         <input
-          id={id}
+          id={htmlId}
           className={classnames(
             'w-full outline-none transition peer',
             className,

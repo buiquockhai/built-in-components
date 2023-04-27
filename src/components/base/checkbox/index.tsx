@@ -6,12 +6,12 @@ export function Checkbox({
   className,
   ...more
 }: ComponentPropsWithoutRef<'input'>) {
-  const id = useId()
+  const htmlId = more.id ?? useId()
   const disabled = more.disabled && 'text-gray-400 cursor-not-allowed'
 
   return (
     <label
-      htmlFor={id}
+      htmlFor={htmlId}
       className={classnames(
         'group flex gap-2 select-none items-center w-fit cursor-pointer',
         disabled,
@@ -19,8 +19,11 @@ export function Checkbox({
       )}
     >
       <div className='flex items-center justify-center'>
-        <input id={id} type='checkbox' className='sr-only peer' {...more} />
-        <div className='w-5 h-5 rounded transition border sm:group-hover:border-neutral-400 peer-checked:bg-primary peer-checked:!border-primary peer-disabled:!border-neutral-300 peer-disabled:peer-checked:bg-neutral-300'></div>
+        <input id={htmlId} type='checkbox' className='sr-only peer' {...more} />
+        <div
+          aria-hidden
+          className='w-5 h-5 rounded transition border sm:group-hover:border-neutral-400 peer-checked:bg-primary peer-checked:!border-primary peer-disabled:!border-neutral-300 peer-disabled:peer-checked:bg-neutral-300'
+        ></div>
         <svg
           xmlns='http://www.w3.org/2000/svg'
           fill='none'

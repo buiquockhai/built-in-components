@@ -50,7 +50,7 @@ body {
   background-color: rgba(0, 0, 0, 0.4);
 }
 
-.c-opening-bg {
+/* .c-opening-bg {
   animation: opening-bg-fade 3500ms ease-in;
 }
 
@@ -86,4 +86,4 @@ body {
   clip-path: inset(0 0 0 100%);
   animation: opening-text-fade 2000ms ease-in;
   animation-delay: 1000ms;
-}
+} */
