@@ -1,9 +1,10 @@
 import classnames from 'classnames'
-import { ComponentPropsWithoutRef, ReactNode, useId } from 'react'
+import { ComponentPropsWithoutRef, ReactNode, forwardRef, useId } from 'react'
 
 type Size = 'xs' | 'sm' | 'md' | 'lg' | 'xl'
 
-export interface Props extends Omit<ComponentPropsWithoutRef<'input'>, 'size'> {
+export interface InputProps
+  extends Omit<ComponentPropsWithoutRef<'input'>, 'size'> {
   size?: Size
   label?: string
   leftSection?: ReactNode
@@ -14,24 +15,25 @@ export interface Props extends Omit<ComponentPropsWithoutRef<'input'>, 'size'> {
 }
 
 const sizes: Record<Size, string> = {
-  xs: 'h-[32px] px-2 min-w-[100px] text-sm gap-2',
-  sm: 'h-[36px] px-3 min-w-[100px] gap-2',
-  md: 'h-[40px] px-3 min-w-[100px] gap-2',
-  lg: 'h-[48px] px-3 min-w-[150px] text-md gap-3',
-  xl: 'h-[56px] px-4 min-w-[150px] text-lg gap-3',
+  xs: 'h-[32px] min-w-[100px] text-sm gap-2',
+  sm: 'h-[36px] min-w-[100px] gap-2',
+  md: 'h-[40px] min-w-[100px] gap-2',
+  lg: 'h-[48px] min-w-[150px] text-md gap-3',
+  xl: 'h-[56px] min-w-[150px] text-lg gap-3',
 }
 
-export function Input({
-  className,
-  size = 'md',
-  label,
-  leftSection,
-  rightSection,
-  error,
-  description,
-  prefix,
-  ...more
-}: Props) {
+export const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
+  const {
+    className,
+    size = 'md',
+    label,
+    leftSection,
+    rightSection,
+    error,
+    description,
+    prefix,
+    ...more
+  } = props
   const htmlId = more.id ?? useId()
 
   const required = more.required && `after:content-['_*'] after:text-red-500`
@@ -45,7 +47,7 @@ export function Input({
       </span>
       <div
         className={classnames(
-          'peer rounded flex border items-center focus-within:border-primary focus-within:ring-1',
+          'peer px-3 rounded flex border items-center focus-within:border-primary focus-within:ring-1',
           sizes[size],
           disabled,
           prefixed,
@@ -62,6 +64,7 @@ export function Input({
             className,
           )}
           type='text'
+          ref={ref}
           {...more}
         />
         {rightSection}
@@ -70,4 +73,4 @@ export function Input({
       <span className='text-sm text-red-500 empty:hidden'>{error}</span>
     </label>
   )
-}
+})

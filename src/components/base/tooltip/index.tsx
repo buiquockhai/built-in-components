@@ -1,4 +1,4 @@
-import { ReactNode, useEffect, useMemo, useState } from 'react'
+import { ReactNode } from 'react'
 import type { Placement } from '@floating-ui/react'
 import classnames from 'classnames'
 import { TooltipContext, useTooltip } from './context'
@@ -23,7 +23,7 @@ export function Tooltip({
 
   return (
     <TooltipContext.Provider value={tooltip}>
-      <TooltipTrigger className='w-fit'>{children}</TooltipTrigger>
+      <TooltipTrigger>{children}</TooltipTrigger>
       <TooltipFloating
         className={classnames(
           `${inter.variable} bg-slate-900 text-gray-100 py-1 px-3 rounded font-sans text-sm`,
