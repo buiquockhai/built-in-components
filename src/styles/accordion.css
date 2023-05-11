@@ -1,0 +1,23 @@
+:root {
+  --accordion-duration: 250ms;
+}
+
+.accordion-ui {
+  display: block;
+}
+
+.accordion-ui:not(.accordion-show) {
+  display: none;
+}
+
+.accordion-show {
+  display: block;
+}
+
+.accordion-run {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  transition-property: height;
+  transition-duration: var(--accordion-duration);
+}

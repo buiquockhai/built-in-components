@@ -1,6 +1,6 @@
 import type { Preview } from '@storybook/react'
 import '../src/styles/global.css'
-import '../src/styles/collapse.css'
+import '../src/styles/accordion.css'
 import '../src/styles/flowing.css'
 import '../src/styles/vars.css'
 

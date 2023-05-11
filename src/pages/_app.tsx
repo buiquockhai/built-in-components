@@ -8,7 +8,7 @@ import { Meta, MetaProps } from '@layout/meta'
 import '@style/vars.css'
 import '@style/global.css'
 import '@style/flowing.css'
-import '@style/collapse.css'
+import '@style/accordion.css'
 
 export const inter = Inter({
   subsets: ['latin'],
